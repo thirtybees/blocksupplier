@@ -40,7 +40,7 @@ class BlockSupplier extends Module
         $this->bootstrap = true;
 		parent::__construct();
 
-		$this->displayName = $this->l('Suppliers block');
+		$this->displayName = $this->l('Block Suppliers');
         $this->description = $this->l('Adds a block displaying your product suppliers.');
 		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => '1.6.99.99');
     }
