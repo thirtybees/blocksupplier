@@ -4,6 +4,7 @@ author: thirty bees
 category: front office
 tags:
   - suppliers
+  - blocksuppliers
 description_short: The block supplier module adds a list of your suppliers to your site.
 description: description.md
 images:
