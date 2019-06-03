@@ -58,14 +58,14 @@ class BlockSupplier extends Module
             return false;
 
         $theme = new Theme(Context::getContext()->shop->id_theme);
-        if ((!$theme->default_right_column || !$this->registerHook('rightColumn'))
-            && (!$theme->default_left_column || !$this->registerHook('leftColumn'))
-        )
-        {
-            parent::uninstall();
-
-            return false;
+        if (Validate::isLoadedObject($theme)) {
+            if ($theme->default_right_column) {
+                $this->registerHook('rightColumn');
+            } elseif ($theme->default_left_column) {
+                $this->registerHook('leftColumn');
+            }
         }
+
         Configuration::updateValue('SUPPLIER_DISPLAY_TEXT', true);
         Configuration::updateValue('SUPPLIER_DISPLAY_TEXT_NB', 5);
         Configuration::updateValue('SUPPLIER_DISPLAY_FORM', false);
